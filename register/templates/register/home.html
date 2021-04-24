@@ -1,0 +1,52 @@
+
+{% extends 'register/base.html'%}
+{% load static %}
+{% load crispy_forms_tags %} 
+{% block content %}
+<div class="container">
+  <div class="row">
+  <div class="col-md-6">
+    
+    <div class="card mt-5 mb-5" id="allboxes">
+      <div class="card-body">
+        <form action="" method="post">
+          <h5 class="card-title font-weight-bold">1. Clinical Features </h5>
+          {% csrf_token %}
+          {{ form|crispy }}
+          <div class="mx-5">
+            <input type="submit" class="btn btn-info" value="Submit" />
+            <button type="reset" class="btn btn-light ml-5" >Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card mt-5" id="allboxes">
+      <div class="card-body">
+        <div>
+          <h5 class="card-title font-weight-bold">2. Findings</h5>
+          <p class="mb-0">Name:</p>
+          <p  class="mb-0"> Age:</p>
+          <p  class="mb-0"> Gender:</p>
+          <p  class="mb-0"> Asthma HX:</p>
+          <p  class="mb-0"> Smoking HX:</p>
+          <p  class="mb-0"> Spirometry measure:</p>
+          <p  class="mb-0"> Blood Eosinophilis:</p>
+          <p  class="mb-0"> Diagnosis:</p>
+          <div class="card>
+            <div class="card-body mt-5">
+        <textarea cols="30" rows="8.5"></textarea>
+            </div>
+          </div>
+          <div>
+            <input type="submit" class="btn btn-info" value="Print" />
+            <button type="submit" class="btn btn-light ml-5">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
